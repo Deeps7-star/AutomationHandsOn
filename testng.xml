@@ -1,0 +1,51 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="AutomationSuite" parallel="methods" thread-count="4">
+
+    <test name="Regression Tests">
+
+        <classes>
+
+            <class name="Tests.S1_BasicFormElementsTest"/>
+            <class name="Tests.S2_ButtonInteractionTest"/>
+            <class name="Tests.S3_CheckBoxesRadioButtonsTest"/>
+            <class name="Tests.S4_DropdownTest"/>
+            <class name="Tests.S6_DynamicContentTest"/>
+            <class name="Tests.S7_WaitsSyncTest"/>
+            <class name="Tests.S9_AlertsTest"></class>
+            <class name="Tests.S10_ModalTest"></class>
+            <class name="Tests.S11_iFrameTest"></class>
+            <class name="Tests.S11_iFrameTest"></class>
+            <class name="Tests.S12_ShadowDomTest"></class>
+            <class name="Tests.S13_DragAndDropTest"/>
+            <class name="Tests.S14_HoverElementsTest"></class>
+            <class name="Tests.S15_ToolTipTest"/>
+            <class name="Tests.S16_FileUploadTest"></class>
+            <class name="Tests.S17_DownloadTest"></class>
+            <class name="Tests.S18_HiddenElementsTest"></class>
+            <class name="Tests.S19_ScrollTest"></class>
+            <class name="Tests.S20_MultipleWindowsTest"></class>
+
+            <class name="Tests.S22_StaleElementTest"></class>
+            <class name="Tests.S23_DynamicListTest"></class>
+            <class name="Tests.S24_NetworkDelayTest"></class>
+            <class name="Tests.S25_RandomFailElementsTest"></class>
+            <class name="Tests.S26_KeyboardActionsTest"></class>
+            <class name="Tests.S27_SliderElementTest"></class>
+            <class name="Tests.S28_DatePickerTest"></class>
+            <class name="Tests.S29_ResizableElementTest"></class>
+            <class name="Tests.S30_ComplexDOMTest"></class>
+
+
+
+            <!--     <class name="Tests.S8_TableAutomationTest"/>
+            <class name="Tests.S21_AuthenticationTest"></class> - write many test cases for this class
+            -->
+
+         </classes>
+
+     </test>
+     <listeners>
+         <listener class-name="Listeners.TestListener"/>
+     </listeners>
+ </suite>
