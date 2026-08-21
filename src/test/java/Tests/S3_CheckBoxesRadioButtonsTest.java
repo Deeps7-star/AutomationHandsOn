@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 public class S3_CheckBoxesRadioButtonsTest extends BaseTest {
 
     @Test
+ // just checking git 3
     public void verifyCheckboxesAndRadioButtons() {
 
         S3_CheckBoxesRadioButtonsPage checkBoxPage = new S3_CheckBoxesRadioButtonsPage(driver);
