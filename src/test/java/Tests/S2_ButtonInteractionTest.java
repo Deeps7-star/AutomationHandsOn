@@ -8,6 +8,8 @@ public class S2_ButtonInteractionTest extends BaseTest {
     @Test
     public void verifyButtonInteractions(){
    // Create page object and pass driver to it.
+
+// just checking git 3
         S2_ButtonInteractionPage buttonPage = new S2_ButtonInteractionPage(driver);
    // Perform actions
         buttonPage.clickNormalButton();
