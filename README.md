@@ -1,154 +1,412 @@
-# Selenium WebDriver Automation Framework
+# 🚀 Selenium WebDriver Automation Framework
 
-A comprehensive **Selenium WebDriver automation framework** built with **Java, Maven, and TestNG**.
+A comprehensive **Selenium WebDriver automation framework** built with **Java, Selenium WebDriver, Maven, and TestNG**.
 
-This project covers core and advanced Selenium WebDriver concepts while demonstrating a structured automation framework using the **Page Object Model (POM)**, reusable utilities, configuration management, TestNG listeners, and Extent Reports.
+The project demonstrates practical implementation of core and advanced Selenium WebDriver concepts using a structured **Page Object Model (POM)** architecture, reusable utilities, external configuration, TestNG listeners, retry handling, screenshots, and **Extent Reports**.
 
-## 🛠 Technologies & Tools
+The project is designed as a hands-on implementation of Selenium automation concepts while following maintainable test automation framework practices.
 
-* **Java**
-* **Selenium WebDriver**
-* **Maven**
-* **TestNG**
-* **Page Object Model (POM)**
-* **Extent Reports**
-* **IntelliJ IDEA**
-* **Git & GitHub**
+---
 
-## 📚 Selenium WebDriver Concepts Covered
+## 🛠️ Technology Stack
 
-The project includes practical implementations of Selenium WebDriver concepts such as:
+| Technology                  | Purpose                               |
+| --------------------------- | ------------------------------------- |
+| **Java**                    | Programming language                  |
+| **Selenium WebDriver**      | Browser automation                    |
+| **TestNG**                  | Test execution and assertions         |
+| **Maven**                   | Dependency and build management       |
+| **Page Object Model (POM)** | Framework design pattern              |
+| **Extent Reports**          | HTML test reporting                   |
+| **IntelliJ IDEA**           | Development environment               |
+| **Git & GitHub**            | Version control and source management |
+
+---
+
+# 📚 Selenium WebDriver Concepts Covered
+
+The project contains dedicated page objects and automated test scenarios covering a broad range of Selenium WebDriver concepts.
+
+### 🔹 Basic Web Interactions
 
 * Browser navigation
 * WebElement interactions
-* Locators
-
-    * ID
-    * Name
-    * Class Name
-    * CSS Selector
-    * XPath
-* Handling input fields and buttons
-* Checkboxes and radio buttons
+* Text fields
+* Buttons
+* Checkboxes
+* Radio buttons
 * Dropdowns
-* Alerts
-* Frames and iFrames
-* Multiple windows and tabs
-* Web tables
-* Mouse actions
-* Keyboard actions
-* Drag and drop
-* JavaScript Executor
-* Scrolling
-* Explicit waits
-* Implicit waits
-* Synchronization
-* Screenshots
-* File upload
-* Dynamic elements
 * Element state verification
-* Browser management
-* Test assertions
-* Data-driven testing
-* Cross-browser testing
 
-## 🏗 Framework Architecture
+### 🔹 Selenium Locators
 
-The framework separates test logic, page interactions, configuration, and reusable functionality.
+Different locator strategies are used throughout the framework, including:
 
-```text
-Project
+* ID
+* Name
+* Class Name
+* CSS Selector
+* XPath
+
+### 🔹 Synchronization & Dynamic Elements
+
+* Explicit waits
+* Selenium synchronization
+* Dynamic content
+* Dynamic elements
+* Stale elements
+* Dynamic lists
+* Network delays
+* Random/failing elements
+
+### 🔹 Browser & DOM Interactions
+
+* Alerts
+* Modal dialogs
+* iFrames
+* Shadow DOM
+* Hidden elements
+* Complex DOM structures
+* Scrolling
+* Multiple browser windows/tabs
+
+### 🔹 Advanced User Interactions
+
+* Mouse hover
+* Drag and drop
+* Tooltips
+* Keyboard actions
+* Slider interactions
+* Resizable elements
+* Date picker interactions
+
+### 🔹 File & Browser Operations
+
+* File upload
+* File download
+* Authentication
+* Screenshots
+* Browser/window management
+
+### 🔹 Additional Automation Concepts
+
+* Web table automation
+* JavaScript-based interactions
+* Wait strategies
+* Retry handling
+* Test listeners
+* External configuration
+* HTML reporting
+
+---
+
+# 🏗️ Framework Architecture
+
+The project follows a structured **Page Object Model (POM)** architecture.
+
+Page interactions, test scenarios, reusable utilities, configuration, listeners, and reporting responsibilities are separated into dedicated components.
+
+```text id="6k6bke"
+AutomationHandsOn/
 │
-├── pages/
-│   └── Page Object classes
-│
-├── tests/
-│   └── Test classes and test scenarios
-│
-├── utilities/
-│   └── Reusable helper methods
-│
-├── listeners/
-│   └── TestNG listeners
-│
-├── config/
-│   └── Configuration properties
-│
-├── reports/
-│   └── Extent Report output
+├── src/
+│   │
+│   ├── main/
+│   │   │
+│   │   ├── java/
+│   │   │   └── org.automationConcepts/
+│   │   │       │
+│   │   │       ├── Pages/
+│   │   │       │   ├── BasePage.java
+│   │   │       │   ├── S1_BasicFormElementsPage.java
+│   │   │       │   ├── S2_ButtonInteractionPage.java
+│   │   │       │   ├── S3_CheckBoxesRadioButtonsPage.java
+│   │   │       │   ├── S4_DropdownPage.java
+│   │   │       │   ├── S6_DynamicContentPage.java
+│   │   │       │   ├── S7_WaitsSyncPage.java
+│   │   │       │   ├── S8_TableAutomationPage.java
+│   │   │       │   ├── S9_AlertsPage.java
+│   │   │       │   ├── S10_ModalPage.java
+│   │   │       │   ├── S11_iFramePage.java
+│   │   │       │   ├── S12_ShadowDomPage.java
+│   │   │       │   ├── S13_DragAndDropPage.java
+│   │   │       │   ├── S14_HoverElementsPage.java
+│   │   │       │   ├── S15_ToolTipPage.java
+│   │   │       │   ├── S16_FileUploadPage.java
+│   │   │       │   ├── S17_DownloadPage.java
+│   │   │       │   ├── S18_HiddenElementsPage.java
+│   │   │       │   ├── S19_ScrollPage.java
+│   │   │       │   ├── S20_MultipleWindowsPage.java
+│   │   │       │   ├── S21_AuthenticationPage.java
+│   │   │       │   ├── S22_StaleElementPage.java
+│   │   │       │   ├── S23_DynamicListPage.java
+│   │   │       │   ├── S24_NetworkDelayPage.java
+│   │   │       │   ├── S25_RandomFailElementsPage.java
+│   │   │       │   ├── S26_KeyboardActionsPage.java
+│   │   │       │   ├── S27_SliderElementPage.java
+│   │   │       │   ├── S28_DatePickerPage.java
+│   │   │       │   ├── S29_ResizableElementPage.java
+│   │   │       │   └── S30_ComplexDOMPage.java
+│   │   │       │
+│   │   │       └── Utilities/
+│   │   │           ├── ConfigKeys.java
+│   │   │           ├── ConfigReader.java
+│   │   │           ├── DateUtil.java
+│   │   │           ├── DownloadUtil.java
+│   │   │           ├── DriverManager.java
+│   │   │           ├── DropdownType.java
+│   │   │           ├── ExtentManager.java
+│   │   │           ├── LogUtil.java
+│   │   │           ├── RetryUtil.java
+│   │   │           ├── ScreenshotUtil.java
+│   │   │           ├── WaitUtil.java
+│   │   │           └── WindowUtil.java
+│   │   │
+│   │   └── resources/
+│   │       └── config.properties
+│   │
+│   └── test/
+│       └── java/
+│           │
+│           ├── Listeners/
+│           │   └── TestListener.java
+│           │
+│           └── Tests/
+│               ├── BaseTest.java
+│               ├── S1_BasicFormElementsTest.java
+│               ├── S2_ButtonInteractionTest.java
+│               ├── S3_CheckBoxesRadioButtonsTest.java
+│               ├── S4_DropdownTest.java
+│               ├── S6_DynamicContentTest.java
+│               ├── S7_WaitsSyncTest.java
+│               ├── S8_TableAutomationTest.java
+│               ├── S9_AlertsTest.java
+│               ├── S10_ModalTest.java
+│               ├── S11_iFrameTest.java
+│               ├── S12_ShadowDomTest.java
+│               ├── S13_DragAndDropTest.java
+│               ├── S14_HoverElementsTest.java
+│               ├── S15_ToolTipTest.java
+│               ├── S16_FileUploadTest.java
+│               ├── S17_DownloadTest.java
+│               ├── S18_HiddenElementsTest.java
+│               ├── S19_ScrollTest.java
+│               ├── S20_MultipleWindowsTest.java
+│               ├── S21_AuthenticationTest.java
+│               ├── S22_StaleElementTest.java
+│               ├── S23_DynamicListTest.java
+│               ├── S24_NetworkDelayTest.java
+│               ├── S25_RandomFailElementsTest.java
+│               ├── S26_KeyboardActionsTest.java
+│               ├── S27_SliderElementTest.java
+│               ├── S28_DatePickerTest.java
+│               ├── S29_ResizableElementTest.java
+│               └── S30_ComplexDOMTest.java
 │
 ├── pom.xml
-│
-└── testng.xml
+├── testng.xml
+├── .gitignore
+└── README.md
 ```
 
-## 📄 Page Object Model
+---
 
-The framework uses the **Page Object Model (POM)** design pattern.
+# 📄 Page Object Model (POM)
 
-Page-specific elements and interactions are maintained inside page classes rather than directly inside test classes.
+The framework follows the **Page Object Model** design pattern.
 
-This helps provide:
+Each Selenium scenario has a corresponding page class responsible for its page-specific elements and browser interactions.
 
-* Better code organization
-* Reusable page methods
+For example:
+
+```text id="3o8mn5"
+S13_DragAndDropPage.java
+            ↓
+S13_DragAndDropTest.java
+```
+
+This separation keeps WebDriver interaction logic away from the test scenarios.
+
+### Benefits
+
+* Improved code readability
+* Better maintainability
+* Reusable page interactions
 * Reduced code duplication
-* Easier maintenance
-* Clear separation between page logic and test logic
+* Clear separation of responsibilities
+* Easier modification of locators
+* Cleaner test classes
 
-## 🧪 Tests
+---
 
-The `tests` package contains automated test scenarios.
+# 🧱 Base Page
 
-Tests use methods provided by the page classes and utilities, keeping test cases focused on the actual test flow and validation.
+`BasePage` provides a common foundation for page objects.
 
-## 🔧 Utilities
+Shared page-level behaviour can be maintained in the base class instead of being duplicated across individual page objects.
 
-The `utilities` package contains reusable functionality used across the automation framework.
+```text id="agcftx"
+BasePage
+   │
+   ├── BasicFormElementsPage
+   ├── ButtonInteractionPage
+   ├── DropdownPage
+   ├── AlertsPage
+   ├── DynamicContentPage
+   └── ...
+```
 
-Examples may include:
+---
 
-* WebDriver management
-* Wait utilities
-* Screenshot utilities
-* Configuration readers
-* Browser utilities
-* Common Selenium helper methods
+# 🧪 Test Layer
 
-## ⚙️ Configuration Properties
+Automated scenarios are maintained separately from page objects under the test layer.
 
-Framework configuration is maintained through properties files.
+Each test class focuses on:
 
-Configuration can include values such as:
+* Test workflow
+* Test execution
+* Validation
+* Assertions
 
-```properties
+while page-specific Selenium interactions remain within the corresponding page object.
+
+`BaseTest` provides shared test-level functionality for the test classes.
+
+---
+
+# 🧰 Reusable Utilities
+
+The framework includes dedicated utility classes for commonly required automation functionality.
+
+## DriverManager
+
+Handles WebDriver-related management and provides centralized driver access.
+
+## WaitUtil
+
+Provides reusable synchronization functionality for Selenium operations.
+
+## ScreenshotUtil
+
+Provides screenshot functionality that can be reused during test execution and failure handling.
+
+## WindowUtil
+
+Provides reusable functionality for browser window and tab operations.
+
+## DownloadUtil
+
+Provides reusable functionality related to file download scenarios.
+
+## DateUtil
+
+Provides reusable date-related functionality.
+
+## ConfigReader
+
+Reads framework configuration values from the external properties file.
+
+## ConfigKeys
+
+Centralizes configuration keys used by the framework.
+
+## ExtentManager
+
+Provides centralized management for Extent Report functionality.
+
+## LogUtil
+
+Provides reusable logging functionality.
+
+## RetryUtil
+
+Provides retry-related functionality for test execution.
+
+## DropdownType
+
+Provides a reusable type abstraction for dropdown-related operations.
+
+---
+
+# ⚙️ Configuration Management
+
+Framework configuration is externalized through:
+
+```text id="66n78p"
+src/main/resources/config.properties
+```
+
+External configuration helps avoid hard-coding environment-specific values directly into test classes.
+
+Configuration can contain values such as:
+
+```properties id="azf15p"
 browser=chrome
 baseUrl=https://example.com
 ```
 
-This allows environment and browser settings to be changed without modifying the test code.
+The actual values should be configured according to the environment where the tests are executed.
 
-## 🧪 TestNG
+> **Security:** Credentials, API keys, tokens, passwords, or other secrets should never be committed to a public GitHub repository.
 
-**TestNG** is used as the test framework.
+---
 
-It provides functionality including:
+# 🧪 TestNG
+
+**TestNG** is used as the test execution framework.
+
+The framework uses TestNG to organize and execute automated Selenium scenarios.
+
+TestNG provides capabilities such as:
 
 * Test annotations
 * Assertions
-* Test grouping
-* Test prioritization
-* Parameterization
-* Test suites
-* Parallel execution
-* Data providers
 * Test lifecycle management
+* Suite execution
+* Test grouping
+* Parameters
+* Data-driven execution
+* Parallel execution
+* Listeners
+* Retry handling
 
-## 👂 TestNG Listeners
+---
 
-The framework includes **TestNG listeners** for monitoring test execution.
+# 📋 TestNG Suite
 
-Listeners can respond to events such as:
+Test suite execution is configured through:
+
+```text id="o00hk3"
+testng.xml
+```
+
+The suite file provides centralized control over test execution.
+
+It can be used to configure:
+
+* Test classes
+* Test suites
+* Groups
+* Parameters
+* Execution order
+* Parallel execution
+* Thread count
+* Listeners
+
+---
+
+# 👂 TestNG Listeners
+
+The framework contains a custom:
+
+```text id="z0n8ej"
+TestListener.java
+```
+
+TestNG listeners allow the framework to respond to test lifecycle events.
+
+Typical events include:
 
 * Test started
 * Test passed
@@ -157,89 +415,287 @@ Listeners can respond to events such as:
 * Suite started
 * Suite completed
 
-They can also be integrated with reporting and screenshot functionality.
+Listeners can also integrate test execution with reporting, logging, screenshots, and other framework-level behaviour.
 
-## 📊 Extent Reports
+---
 
-**Extent Reports** is integrated to provide detailed HTML test execution reports.
+# 🔁 Retry Handling
 
-Reports can contain information such as:
+The framework contains:
 
-* Test name
-* Execution status
-* Pass/fail results
-* Execution details
-* Failure information
-* Screenshots
+```text id="6r8br7"
+RetryUtil.java
+```
 
-## 📦 Maven
+Retry functionality can be used to support scenarios where failed test execution needs controlled re-execution.
 
-**Maven** is used for project and dependency management.
+This is particularly useful when studying unstable or intentionally failing browser scenarios.
 
-Dependencies and plugins are configured in:
+---
 
-```text
+# 📸 Screenshot Support
+
+Screenshot functionality is centralized through:
+
+```text id="2d3q93"
+ScreenshotUtil.java
+```
+
+Screenshots can be captured during automation execution and can assist with debugging failed Selenium scenarios.
+
+---
+
+# 📊 Extent Reports
+
+The framework integrates **Extent Reports** for HTML-based test reporting.
+
+Reporting functionality is managed through:
+
+```text id="y0vvd1"
+ExtentManager.java
+```
+
+After test execution, an HTML report is generated under the test output directory.
+
+Example:
+
+```text id="v47on9"
+test-output/
+└── ExtentReport.html
+```
+
+The report provides a visual representation of automated test execution and results.
+
+---
+
+# 📦 Maven
+
+**Maven** is used for dependency management, build configuration, and test execution.
+
+Project dependencies and Maven configuration are maintained in:
+
+```text id="f9vsnb"
 pom.xml
 ```
 
-Maven handles the required libraries for Selenium WebDriver, TestNG, Extent Reports, and other framework components.
+Maven allows the project and its dependencies to be managed consistently without manually adding external libraries.
 
-Tests can also be executed through Maven:
+---
 
-```bash
-mvn test
-```
+# ▶️ Running the Tests
 
-## 📋 TestNG Suite
-
-Test execution can be controlled through:
-
-```text
-testng.xml
-```
-
-The suite file can be used to configure:
-
-* Test classes
-* Test groups
-* Parameters
-* Execution order
-* Parallel execution
-
-## ▶️ Running the Project
-
-### IntelliJ IDEA
+## Option 1 — IntelliJ IDEA
 
 1. Clone the repository.
-2. Open the project in IntelliJ IDEA.
-3. Allow Maven to download the required dependencies.
-4. Configure the required values in the configuration properties file.
+2. Open the project in **IntelliJ IDEA**.
+3. Allow Maven to download and synchronize the required dependencies.
+4. Check the required configuration values in `config.properties`.
 5. Open `testng.xml`.
 6. Right-click inside the file.
 7. Select **Run**.
 
-### Maven
+---
 
-From the project directory:
+## Option 2 — Run an Individual Test
 
-```bash
+Navigate to a test class, for example:
+
+```text id="l7lfyp"
+S13_DragAndDropTest.java
+```
+
+Right-click the test class or individual test method and select:
+
+```text id="2gwbju"
+Run
+```
+
+This is useful when working on or debugging an individual Selenium concept.
+
+---
+
+## Option 3 — Maven
+
+From the project root, run:
+
+```bash id="ts4hvs"
 mvn clean test
 ```
 
-## 📊 Test Reports
+Maven will build the project and execute the configured tests.
 
-After test execution, the generated Extent Report can be opened in a browser to review the test results.
+---
 
-The report provides a visual summary of the automation execution and individual test results.
+# 📊 Viewing the Extent Report
 
-## 🎯 Project Purpose
+After test execution, locate:
 
-The purpose of this project is to demonstrate practical knowledge of **Selenium WebDriver automation** and the design of a maintainable Java-based test automation framework.
+```text id="q3u6dc"
+test-output/
+└── ExtentReport.html
+```
 
-It combines Selenium concepts with commonly used automation framework components, including:
+Open `ExtentReport.html` in a web browser to view the generated test report.
 
-**Java → Selenium WebDriver → Maven → TestNG → Page Object Model → Utilities → Configuration → Listeners → Extent Reports**
+---
 
-## 👤 Author
+# 🚀 Getting Started
 
-Created as a comprehensive Selenium WebDriver automation project.
+### 1. Clone the Repository
+
+```bash id="4eppc4"
+git clone <repository-url>
+```
+
+### 2. Navigate to the Project
+
+```bash id="x9yb8l"
+cd AutomationHandsOn
+```
+
+### 3. Install Dependencies and Run Tests
+
+```bash id="4sksgp"
+mvn clean test
+```
+
+Alternatively, import the project into IntelliJ IDEA and execute the TestNG suite through `testng.xml`.
+
+---
+
+# 🔄 Framework Flow
+
+At a high level, the framework follows this execution flow:
+
+```text id="m9z3dh"
+             testng.xml
+                 │
+                 ▼
+             TestNG Suite
+                 │
+                 ▼
+              BaseTest
+                 │
+                 ▼
+            Test Classes
+                 │
+                 ▼
+            Page Objects
+                 │
+                 ▼
+        Selenium WebDriver
+                 │
+                 ▼
+             Browser
+```
+
+Supporting framework components operate alongside the test execution:
+
+```text id="jbxcp9"
+          Configuration
+               │
+               ▼
+          ConfigReader
+               │
+               ▼
+Tests ───► Pages ───► WebDriver
+ │                      │
+ │                      │
+ ├── Wait Utilities ────┤
+ ├── Window Utilities ──┤
+ ├── Download Utility ──┤
+ └── Screenshot Utility─┘
+               │
+               ▼
+        Listener / Logging
+               │
+               ▼
+          Extent Report
+```
+
+---
+
+# 🎯 Project Purpose
+
+The purpose of this project is to demonstrate hands-on knowledge of **Selenium WebDriver** and the development of a structured Java-based test automation framework.
+
+Rather than keeping every Selenium example as an isolated test script, the project organizes automation functionality into a maintainable framework using:
+
+```text id="4tbrpf"
+Java
+  ↓
+Selenium WebDriver
+  ↓
+Page Object Model
+  ↓
+Reusable Utilities
+  ↓
+TestNG
+  ↓
+Maven
+  ↓
+Configuration
+  ↓
+Listeners
+  ↓
+Logging / Screenshots
+  ↓
+Extent Reports
+```
+
+The project covers Selenium concepts ranging from basic WebElement interaction to synchronization, advanced DOM handling, browser interactions, file operations, dynamic elements, user interactions, and framework-level test automation functionality.
+
+---
+
+# 🌿 Version Control Workflow
+
+The project is maintained using **Git and GitHub**.
+
+Development can follow a feature-branch workflow:
+
+```text id="3g3zqp"
+master
+   │
+   └── feature/*
+          │
+          ├── Development
+          ├── Commit
+          ├── Push
+          └── Pull Request
+                 │
+                 ▼
+               master
+```
+
+This keeps development work isolated from the main branch until changes are ready to be reviewed and merged.
+
+---
+
+# 📌 Key Framework Features
+
+* ✅ Java-based Selenium WebDriver automation
+* ✅ Page Object Model architecture
+* ✅ Dedicated page and test layers
+* ✅ Reusable WebDriver utilities
+* ✅ Dynamic element handling
+* ✅ Wait and synchronization utilities
+* ✅ Multiple window handling
+* ✅ File upload and download automation
+* ✅ Advanced DOM interactions
+* ✅ Shadow DOM handling
+* ✅ iFrame handling
+* ✅ Mouse and keyboard interactions
+* ✅ Screenshot support
+* ✅ External configuration management
+* ✅ TestNG test execution
+* ✅ TestNG listeners
+* ✅ Retry functionality
+* ✅ Maven dependency management
+* ✅ Extent HTML reporting
+* ✅ Git/GitHub version control
+
+---
+
+# 👤 Author
+
+Created as a comprehensive hands-on **Selenium WebDriver automation framework project** demonstrating practical browser automation and test framework development using **Java, Selenium WebDriver, Maven, TestNG, Page Object Model, reusable utilities, listeners, and Extent Reports**.
