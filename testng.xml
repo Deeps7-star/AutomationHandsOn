@@ -15,7 +15,6 @@
             <class name="Tests.S9_AlertsTest"/>
             <class name="Tests.S10_ModalTest"/>
             <class name="Tests.S11_iFrameTest"/>
-            <class name="Tests.S11_iFrameTest"/>
             <class name="Tests.S12_ShadowDomTest"/>
             <class name="Tests.S13_DragAndDropTest"/>
             <class name="Tests.S14_HoverElementsTest"/>
@@ -34,7 +33,8 @@
             <class name="Tests.S28_DatePickerTest"/>
             <class name="Tests.S29_ResizableElementTest"/>
             <class name="Tests.S30_ComplexDOMTest"/>
-            //need to learn dynamic table which is important for automation testing
+            <!-- learn about dynamic table -->
+
             <!--     <class name="Tests.S8_TableAutomationTest"/>
             <class name="Tests.S21_AuthenticationTest"></class> - write many test cases for this class
             -->
