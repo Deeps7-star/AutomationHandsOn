@@ -33,7 +33,7 @@
             <class name="Tests.S28_DatePickerTest"/>
             <class name="Tests.S29_ResizableElementTest"/>
             <class name="Tests.S30_ComplexDOMTest"/>
-            <!-- learn about dynamic table -->
+            <!-- removing for git/github workout -->
 
             <!--     <class name="Tests.S8_TableAutomationTest"/>
             <class name="Tests.S21_AuthenticationTest"></class> - write many test cases for this class
