@@ -36,3 +36,10 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### Selenium / TestNG generated output ###
+test-output/
+
+### JVM crash/debug logs ###
+hs_err_pid*.log
+replay_pid*.log
