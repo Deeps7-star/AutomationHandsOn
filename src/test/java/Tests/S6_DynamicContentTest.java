@@ -9,7 +9,7 @@ public class S6_DynamicContentTest  extends BaseTest{
     @Test
     public void verifyDynamicContent(){
         S6_DynamicContentPage dynamicContent = new S6_DynamicContentPage(driver);
-
+        //just checking git/github integration
         // Test 1: Show Delayed Element
         dynamicContent.clickShowDelayedElement();
         String delayedText = dynamicContent.getDelayedText();
