@@ -96,6 +96,6 @@ Please do not represent this work as your own.
 
 ## 👤 Author
 
-**Deeps7-star**
+**Deepika**
 
 Hands-on Selenium WebDriver automation framework project demonstrating practical experience with Java, Selenium, TestNG, Maven, Page Object Model, reusable utilities, test listeners, retry handling, screenshots, logging, and HTML reporting.
